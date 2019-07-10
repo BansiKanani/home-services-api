@@ -1,0 +1,19 @@
+{
+  "name": "Jane Doe",
+  "gender": "f",
+  "dob": "25/04/1995",
+  "mobile": 9876543210,
+  "email": "jane.doe@gmail.com",
+  "photoUrl": "janedoe.jpg",
+  "address": "jane doe adderess"
+}
+
+{
+    "name": "John Doe",
+    "gender": "m",
+    "dob": "30/05/1998",
+    "mobile": 1234567890,
+    "email": "john.doe@gmail.com",
+    "photoUrl": "johndoe.jpg",
+    "address": "john doe adderess"
+  }
