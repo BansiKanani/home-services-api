@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const serviceSchema = new mongoose.Schema({
-  name: { type: String },
-  photourl: { type: String }
+  name: String,
+  photourl: String
 });
 
-module.exports = mongoose.model("Service", serviceSchema);
+module.exports = mongoose.model('Service', serviceSchema);
