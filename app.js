@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dbString = require('./config/db_connection');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const host = process.env.host;
 const username = process.env.username;
 const password = process.env.password;
