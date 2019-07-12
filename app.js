@@ -4,11 +4,15 @@ const bodyParser = require('body-parser');
 const dbString = require('./config/db_connection');
 
 const PORT = process.env.PORT || 3000;
+const host = process.env.host;
+const username = process.env.username;
+const password = process.env.password;
+const dbName = process.env.dbName;
 
 mongoose
   .connect(
     encodeURI(
-      `mongodb+srv://user1:P@$$word123@cluster0-10xfx.mongodb.net/home-services-api?retryWrites=true&w=majority`
+      encodeURI(`mongodb+srv://${username}:${password}@${host}/${dbName}?retryWrites=true&w=majority`)
     ),
     { useNewUrlParser: true }
   )
