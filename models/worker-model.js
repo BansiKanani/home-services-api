@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 
 const workerSchema = new mongoose.Schema({
   isVerified: Boolean,
-  name: String,
   dob: Date,
+  name: String,
   gender: { type: String, enum: ['m', 'f'] },
+  address: String,
   photoUrl: String,
-  mobile: { type: Number, min: 1000000000, max: 9999999999 },
-  services: [mongoose.SchemaTypes.ObjectId],
+  phone: Number,
+  servicesId: [mongoose.SchemaTypes.ObjectId],
   aadhar: Number,
   pan: String,
   workingHours: { start: Number, end: Number }

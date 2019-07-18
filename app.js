@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 const host = process.env.host;
 const username = process.env.username;
 const password = process.env.password;
@@ -39,6 +39,16 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var corsMiddleware = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, PATCH, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization');
+  next();
+}
+
+app.use(corsMiddleware);
+
+
 // ATTACHING ROUTERS
 app.use('/api/login', loginRoutes);
 app.use('/api/services', serviceRoutes);
@@ -53,5 +63,5 @@ app.get('/', (req, res) => {
 
 // STARTING SERVER
 app.listen(PORT, () => {
-  console.log(`Listening on port 3000\n`);
+  console.log(`Listening on port ${PORT}\n`);
 });

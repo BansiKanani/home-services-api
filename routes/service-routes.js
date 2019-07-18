@@ -23,6 +23,7 @@ function routes(Service) {
       });
     })
     .post((req, res) => {
+      console.log(req.body);
       const service = new Service(req.body);
       service.save();
       return res.status(201).json(service);

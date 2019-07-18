@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const loginSchema = new mongoose.Schema({
-  mobile: { type: Number, min: 1000000000, max: 9999999999 },
-  user: mongoose.SchemaTypes.ObjectId,
+  phone: Number,
+  userId: mongoose.SchemaTypes.ObjectId,
   password: String,
 });
 
