@@ -9,7 +9,8 @@ const orderSchema = new mongoose.Schema({
   address: String,
   pincode: Number,
   phone: Number,
-  status: { type: String, enum: ['ordered', 'completed'] }
+  status: { type: String, enum: ['ordered', 'completed'] },
+  customerName: String
 });
 
 module.exports = mongoose.model('Order', orderSchema);
